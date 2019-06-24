@@ -4,7 +4,7 @@
 // @ts-ignore
 const swapi = axios.create({
   baseURL: 'https:swapi.co/api/',
-  timeout: 10000
+  timeout: 30000
 });
 
 
@@ -25,10 +25,6 @@ function setState(propName, data) {
 export default class CharacterService {
   addSubscriber(propName, fn) {
     _subscribers[propName].push(fn)
-  }
-
-  get Characters() {
-    return _state.characters
   }
 
   getCharacters() {
